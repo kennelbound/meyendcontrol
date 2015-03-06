@@ -1,0 +1,10 @@
+#main-scene {
+    -fx-background-color: #FF0000
+}
+
+#trackbox {
+    -fx-background-image: url("/images/main_bg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 900 506;
+    -fx-background-position: center center;
+}
