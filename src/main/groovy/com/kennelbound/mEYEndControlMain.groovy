@@ -12,19 +12,12 @@ import static groovyx.javafx.GroovyFX.start
  */
 @Log4j
 class mEYEndControlMain {
-    TetManager tetManager;
 
     /*
         Constructor
      */
 
     void init() {
-        tetManager = new TetManager();
-        tetManager.init();
-
-        def mouseControl = new MouseController();
-        mouseControl.init();
-
         def tb = null;
 
         start {
@@ -32,20 +25,10 @@ class mEYEndControlMain {
 
             stage(title: 'GroovyFX Hello World', visible: true, style: StageStyle.UNDECORATED) {
                 scene(id: 'main-scene', stylesheets: resource('/css/main.css'), width: 200, height: 200) {
-                    tb = trackbox(id: 'trackbox', width: 200, height: 200) { }
+                    tb = trackbox(id: 'trackbox', width: 200, height: 200) {}
                     GazeManager.instance.addGazeListener(tb);
-
                 }
             }
-        }
-
-//        tetManager.calibrate();
-//
-//        if (tetManager.calibrated) {
-//        }
-
-        while (true) {
-            // do nothing until the break
         }
 
         log.info "Closing";
